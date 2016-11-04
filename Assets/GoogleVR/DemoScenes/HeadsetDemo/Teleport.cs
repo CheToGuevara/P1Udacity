@@ -17,8 +17,6 @@ using System.Collections;
 
 [RequireComponent(typeof(Collider))]
 public class Teleport : MonoBehaviour, IGvrGazeResponder {
-  public UdacityFunEffects uEffects;
-
   private Vector3 startingPosition;
 
   void Start() {
@@ -38,12 +36,6 @@ public class Teleport : MonoBehaviour, IGvrGazeResponder {
   }
 
   public void Reset() {
-    if (uEffects) {
-      for (int i = 0; i < uEffects.cubes.Length; i++) {
-        Destroy(uEffects.cubes[i]); //called here as opposed to 
-      }
-    }
-
     transform.localPosition = startingPosition;
   }
 
